@@ -1,0 +1,23 @@
+ngb-carousel {
+  img {
+    width: 100%;
+  }
+}
+
+.custom-signup-btn, .custom-signin-btn {
+  background-color: #005005;
+  border-color: #60ad5e;
+}
+
+.custom-signup-btn, .custom-signin-btn {
+  &:active {
+    background-color: #60ad5e !important;
+    border-color: #60ad5e !important;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(96, 173, 94, 0.5);
+  }
+  &:active:focus {
+    box-shadow: 0 0 0 0.2rem rgba(96, 173, 94, 0.5) !important;
+  }
+}
