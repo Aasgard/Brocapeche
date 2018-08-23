@@ -1,5 +1,8 @@
 {
+  "COMMON": {
+    "website_name": "Brocapêche"
+  },
   "HOMEPAGE": {
-    "hello": "Coucou les amis !"
+    "big_title": "Brocapêche"
   }
 }

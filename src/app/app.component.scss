@@ -31,5 +31,78 @@ nav {
 .homepage-main-image-container {
   height: 450px;
   background-size: cover;
-  background: url("http://placeimg.com/2200/600/any") center top;
+  background: url("../assets/forest-lake.jpeg") center right;
+  display: flex;
+  align-items: center;
+  .homepage-main-image-logo {
+    margin: 0 auto;
+    display: block;
+    height: 170px;
+    width: 170px;
+  }
+  .homepage-main-image-title {
+    color: white;
+    font-size: 46px;
+  }
+  .homepage-main-image-description {
+    color: white;
+    text-align: center;
+  }
+}
+
+.text-green {
+  color: #2e7d32;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.homepage-fat-separator {
+  background-color: #2e7d32;
+  min-height: 75px;
+  max-height: 50px;
+  margin-top: -20px;
+  -webkit-box-shadow: 0px 3px 36px 14px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 36px 14px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 36px 14px rgba(0,0,0,0.75);
+
+  // TODO : remove ?
+  display: flex;
+  align-items: center;
+}
+
+.homepage-card-image {
+  margin: 0 auto;
+  display: block;
+  height: 85px;
+  width: 85px;
+}
+
+.homepage-rotate {
+  &-right {
+    transition: transform 300ms;
+    &:hover {
+      -webkit-transform: rotate(-30deg);
+      -moz-transform: rotate(-30deg);
+      -ms-transform: rotate(-30deg);
+      -o-transform: rotate(-30deg);
+      transform: rotate(-30deg);
+      transition: 300ms;
+    }
+  }
+}
+
+.homepage-card-explanations {
+  text-align: justify;
+}
+
+.footer-container {
+  background-color: #2e7d32;
+  div {
+    color: white;
+    a {
+      color: white;
+      font-weight: bold;
+    }
+  }
+
 }

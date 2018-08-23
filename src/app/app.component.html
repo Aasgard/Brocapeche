@@ -39,45 +39,107 @@
 <!--</div>-->
 <!--</div>-->
 
-<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #2e7d32;">
-    <a class="navbar-brand" href="#">
-        <img src="favicon.ico" width="30" height="30" class="d-inline-block align-top rounded">
-        Brocapêche
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2e7d32;">
+    <div class="container">
+        <a class="navbar-brand mx-auto" href="#">
+            <img src="../assets/fishing.png" width="30" height="30" class="d-inline-block align-top rounded mr-2">
+            Brocapêche
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-1 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Petites annonces</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Conseils</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Vos photos</a>
-            </li>
-            <li class="nav-item">
-                <i class="fa fa-search"></i>
-            </li>
-        </ul>
-        <button type="button" class="btn btn-primary mr-3 custom-signup-btn">S'inscrire</button>
-        <button type="button" class="btn btn-primary custom-signin-btn">Se connecter</button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-1 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Petites annonces</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Conseils</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Vos photos</a>
+                </li>
+                <li class="nav-item">
+                    <i class="fa fa-search"></i>
+                </li>
+            </ul>
+            <button type="button" class="btn btn-primary mr-3 custom-signup-btn">S'inscrire</button>
+            <button type="button" class="btn btn-primary custom-signin-btn">Se connecter</button>
+        </div>
     </div>
 </nav>
 
 <div class="container-fluid">
-    <div class="row homepage-main-image-container">
-        <div class="col-xs-12">
 
+    <!-- START : main image container -->
+    <div class="row homepage-main-image-container">
+        <div class="col-12">
+            <img src="../assets/fishouaisouais.png" class="mb-3 homepage-main-image-logo" alt="">
+            <h1 class="text-center homepage-main-image-title"><span class="d-none d-sm-inline-block">Bienvenue sur</span> {{ 'HOMEPAGE.big_title' | translate }}</h1>
+            <h4 class="offset-2 col-8 homepage-main-image-description">Petites annonces fishing entre passionés</h4>
+        </div>
+    </div>
+    <!-- END : main image container -->
+
+</div>
+
+<div class="homepage-fat-separator">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                    </div>
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12 col-md-4 mb-5">
+            <img src="../assets/zoom.png" alt="Cherchez" class="homepage-card-image homepage-rotate-right mb-4">
+            <h4 class="text-center text-green">Recherchez</h4>
+            <p class="homepage-card-explanations pl-4 pr-4 pt-2">
+                Plus de 230 000 annonces spécialisées déjà publiées.
+                Rejoignez une communauté de plus de 20 000 utilisateurs passionés cherchant ou vendant du matériel.<br>
+                N'attendez plus, commencez à chercher dès maintenant !
+            </p>
+        </div>
+        <div class="col-12 col-md-4 mb-5">
+            <img src="../assets/contact-book.png" alt="Contactez" class="homepage-card-image homepage-rotate-right mb-4">
+            <h4 class="text-center text-green">Contactez</h4>
+            <p class="homepage-card-explanations pl-4 pr-4 pt-2">
+                Prenez contact facilement par email ou téléphone avec le vendeur.
+                Vous pourrez alors échanger des informations liées au matériel pour lequel vous avez craqué.
+            </p>
+        </div>
+        <div class="col-12 col-md-4 mb-5">
+            <img src="../assets/fishing-vest.png" alt="Profitez" class="homepage-card-image homepage-rotate-right mb-4">
+            <h4 class="text-center text-green">Profitez !</h4>
+            <p class="homepage-card-explanations pl-4 pr-4 pt-2">
+                La nouveau matériel fraîchement acquis peut alors être utilisé lors de vos nombreuses sorties.<br>
+                Que poissons en tout genre et grosses prises s'en suivent !
+            </p>
         </div>
     </div>
 </div>
+
+<footer class="footer-container">
+    <!-- Copyright -->
+    <div class="text-center py-3">© 2018 Copyright:
+        <a href="#"> Brocapêche.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
 
 <router-outlet></router-outlet>
