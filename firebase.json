@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/Brocapeche",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
