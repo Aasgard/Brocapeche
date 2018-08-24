@@ -1,6 +1,9 @@
 import 'moment/locale/fr';
 import * as moment from 'moment';
-import { Component } from '@angular/core';
+import { auth, User } from 'firebase';
+import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
+import UserCredential = firebase.auth.UserCredential;
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -8,9 +11,18 @@ import { TranslateService } from '@ngx-translate/core';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-    constructor(private translate: TranslateService) {
+export class AppComponent implements OnInit {
+
+    public connectedUser: User;
+
+    constructor(private translate: TranslateService, private afAuth: AngularFireAuth) {
         this.initializeApplication();
+    }
+
+    public ngOnInit(): void {
+        this.afAuth.user.subscribe((user: User) => {
+            this.connectedUser = user;
+        });
     }
 
     private initializeApplication(): void {
@@ -18,5 +30,24 @@ export class AppComponent {
         this.translate.use('fr');
         // Define locale for Datetime object to French
         moment().locale('fr');
+    }
+
+    public onSignInButtonClicked(): void {
+        this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then((data: UserCredential) => {
+            this.connectedUser = data.user;
+        }).catch(error => {
+            alert(error);
+        });
+    }
+
+    public onSignOutButtonClicked(): void {
+        this.afAuth.auth.signOut().then(response => {
+            this.connectedUser = null;
+        });
+    }
+
+    public getConnectedUser(): void {
+        console.log(this.connectedUser);
+        // return this.connectedUser;
     }
 }

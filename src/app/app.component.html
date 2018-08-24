@@ -1,56 +1,15 @@
-<!--<p>New website in Roboto font</p>-->
-
-<!--<p>{{ 'HOMEPAGE.hello' | translate }}</p>-->
-
-<!--<div class="container-fluid">-->
-<!--<div class="row no-gutters">-->
-<!--<div class="col-md-12">-->
-<!--<ngb-carousel>-->
-<!--<ng-template ngbSlide>-->
-<!--<img [src]="'https://picsum.photos/900/500?image=309'" alt="Random first slide">-->
-<!--<div class="carousel-caption">-->
-<!--<h3>10 seconds between slides...</h3>-->
-<!--<p>This carousel uses customized default values.</p>-->
-<!--</div>-->
-<!--</ng-template>-->
-<!--<ng-template ngbSlide>-->
-<!--<img [src]="'https://picsum.photos/900/500?image=307'" alt="Random second slide">-->
-<!--<div class="carousel-caption">-->
-<!--<h3>No mouse events...</h3>-->
-<!--<p>This carousel doesn't pause or resume on mouse events</p>-->
-<!--</div>-->
-<!--</ng-template>-->
-<!--<ng-template ngbSlide>-->
-<!--<img [src]="'https://picsum.photos/900/500?image=301'"  alt="Random third slide">-->
-<!--<div class="carousel-caption">-->
-<!--<h3>No keyboard...</h3>-->
-<!--<p>This carousel uses customized default values.</p>-->
-<!--</div>-->
-<!--</ng-template>-->
-<!--<ng-template ngbSlide>-->
-<!--<img [src]="'https://picsum.photos/900/500?image=308'" alt="Random fourth slide">-->
-<!--<div class="carousel-caption">-->
-<!--<h3>And no wrap after last slide.</h3>-->
-<!--<p>This carousel uses customized default values.</p>-->
-<!--</div>-->
-<!--</ng-template>-->
-<!--</ngb-carousel>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2e7d32;">
     <div class="container">
-        <a class="navbar-brand mx-auto" href="#">
+        <a class="navbar-brand" href="#">
             <img src="../assets/fishing.png" width="30" height="30" class="d-inline-block align-top rounded mr-2">
             Brocapêche
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav mr-auto mt-1 mt-lg-0">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
@@ -64,12 +23,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Vos photos</a>
                 </li>
-                <li class="nav-item">
-                    <i class="fa fa-search"></i>
-                </li>
             </ul>
-            <button type="button" class="btn btn-primary mr-3 custom-signup-btn">S'inscrire</button>
-            <button type="button" class="btn btn-primary custom-signin-btn">Se connecter</button>
+            <button type="button" class="btn btn-primary mr-3 custom-signup-btn" (click)="getConnectedUser()">S'inscrire</button>
+            <button *ngIf="!connectedUser" type="button" class="btn btn-primary custom-signin-btn" (click)="onSignInButtonClicked()">Se connecter</button>
+            <button *ngIf="connectedUser" type="button" class="btn btn-danger custom-signin-btn" (click)="onSignOutButtonClicked()">Déconnexion</button>
         </div>
     </div>
 </nav>
@@ -88,15 +45,25 @@
 
 </div>
 
-<div class="homepage-fat-separator">
+<div class="homepage-fat-separator d-flex align-items-center">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                        <label class="input-group-text" for="inputGroup">Votre recherche :</label>
                     </div>
-                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    <input type="text" class="form-control" id="inputGroup" placeholder="Canne, moulinet, leurre ...">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="selectGroup">Où ?</label>
+                    </div>
+                    <select class="custom-select" id="selectGroup">
+                        <option selected>Choisir une région ...</option>
+                        <option value="1">Côtes-d'Armor</option>
+                        <option value="2">Finistère</option>
+                        <option value="3">Ille-et-Vilaine</option>
+                        <option value="4">Morbihan</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -136,8 +103,8 @@
 
 <footer class="footer-container">
     <!-- Copyright -->
-    <div class="text-center py-3">© 2018 Copyright:
-        <a href="#"> Brocapêche.com</a>
+    <div class="text-center py-3">© 2018 Copyright
+        <a href="#">Brocapeche</a>
     </div>
     <!-- Copyright -->
 </footer>
