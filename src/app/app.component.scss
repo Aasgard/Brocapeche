@@ -28,6 +28,16 @@ nav {
   }
 }
 
+.btn-blue {
+  background-color: #0277bd;
+  border-color: #58a5f0;
+}
+
+.btn-red {
+  background-color: #d32f2f;
+  border-color: #ff6659;
+}
+
 .homepage-main-image-container {
   height: 450px;
   background-size: cover;
@@ -58,8 +68,6 @@ nav {
 
 .homepage-fat-separator {
   background-color: #2e7d32;
-  min-height: 75px;
-  max-height: 50px;
   margin-top: -20px;
   -webkit-box-shadow: 0px 3px 36px 14px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 3px 36px 14px rgba(0,0,0,0.75);

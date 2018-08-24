@@ -24,9 +24,10 @@
                     <a class="nav-link" href="#">Vos photos</a>
                 </li>
             </ul>
-            <button type="button" class="btn btn-primary mr-3 custom-signup-btn" (click)="getConnectedUser()">S'inscrire</button>
+            <button *ngIf="!connectedUser" type="button" class="btn btn-primary mr-3 custom-signup-btn" (click)="getConnectedUser()">S'inscrire</button>
+            <button *ngIf="connectedUser" type="button" class="btn btn-primary mr-3 custom-signup-btn btn-blue">Mon compte</button>
             <button *ngIf="!connectedUser" type="button" class="btn btn-primary custom-signin-btn" (click)="onSignInButtonClicked()">Se connecter</button>
-            <button *ngIf="connectedUser" type="button" class="btn btn-danger custom-signin-btn" (click)="onSignOutButtonClicked()">Déconnexion</button>
+            <button *ngIf="connectedUser" type="button" class="btn btn-danger custom-signin-btn btn-red" (click)="onSignOutButtonClicked()">Déconnexion</button>
         </div>
     </div>
 </nav>
@@ -37,7 +38,8 @@
     <div class="row homepage-main-image-container">
         <div class="col-12">
             <img src="../assets/fishouaisouais.png" class="mb-3 homepage-main-image-logo" alt="">
-            <h1 class="text-center homepage-main-image-title"><span class="d-none d-sm-inline-block">Bienvenue sur</span> {{ 'HOMEPAGE.big_title' | translate }}</h1>
+            <!--<h1 class="text-center homepage-main-image-title"><span class="d-none d-sm-inline-block">Bienvenue sur</span> {{ 'HOMEPAGE.big_title' | translate }}</h1>-->
+            <h1 class="text-center homepage-main-image-title">Bienvenue {{ connectedUser?.displayName }}</h1>
             <h4 class="offset-2 col-8 homepage-main-image-description">Petites annonces fishing entre passionés</h4>
         </div>
     </div>
@@ -45,21 +47,25 @@
 
 </div>
 
-<div class="homepage-fat-separator d-flex align-items-center">
+<div class="homepage-fat-separator d-flex align-items-center py-4">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-md-12 col-lg-6 mb-3 mb-lg-0">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroup">Votre recherche :</label>
                     </div>
                     <input type="text" class="form-control" id="inputGroup" placeholder="Canne, moulinet, leurre ...">
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="input-group">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="selectGroup">Où ?</label>
                     </div>
                     <select class="custom-select" id="selectGroup">
                         <option selected disabled>Choisir une région ...</option>
-                        <option value="{{ dpt.code }}" *ngFor="let dpt of frenchDepartments">{{ dpt.name }}</option>
+                        <option *ngFor="let dpt of frenchDepartments" value="{{ dpt.code }}">{{ dpt.code }} - {{ dpt.name }}</option>
                     </select>
                 </div>
             </div>

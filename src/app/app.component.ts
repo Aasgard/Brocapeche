@@ -23,8 +23,9 @@ export class AppComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.afAuth.user.subscribe((user: User) => {
+        this.afAuth.authState.subscribe((user: User) => {
             this.connectedUser = user;
+            console.log(this.connectedUser);
         });
     }
 
