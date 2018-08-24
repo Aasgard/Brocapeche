@@ -58,11 +58,8 @@
                         <label class="input-group-text" for="selectGroup">Où ?</label>
                     </div>
                     <select class="custom-select" id="selectGroup">
-                        <option selected>Choisir une région ...</option>
-                        <option value="1">Côtes-d'Armor</option>
-                        <option value="2">Finistère</option>
-                        <option value="3">Ille-et-Vilaine</option>
-                        <option value="4">Morbihan</option>
+                        <option selected disabled>Choisir une région ...</option>
+                        <option value="{{ dpt.code }}" *ngFor="let dpt of frenchDepartments">{{ dpt.name }}</option>
                     </select>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import UserCredential = firebase.auth.UserCredential;
 import { TranslateService } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-root',
@@ -14,9 +15,11 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent implements OnInit {
 
     public connectedUser: User;
+    public frenchDepartments: Array<any> = [];
 
-    constructor(private translate: TranslateService, private afAuth: AngularFireAuth) {
+    constructor(private translate: TranslateService, private afAuth: AngularFireAuth, private httpClient: HttpClient) {
         this.initializeApplication();
+        this.getDepartments();
     }
 
     public ngOnInit(): void {
@@ -49,5 +52,11 @@ export class AppComponent implements OnInit {
     public getConnectedUser(): void {
         console.log(this.connectedUser);
         // return this.connectedUser;
+    }
+
+    private getDepartments(): void {
+        this.httpClient.get('assets/statics/french-departments.json').subscribe((result: any) => {
+            this.frenchDepartments = result;
+        });
     }
 }
