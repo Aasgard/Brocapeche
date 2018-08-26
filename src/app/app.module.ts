@@ -11,10 +11,24 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MenuComponent } from './components/shared/menu/menu.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { PhotosComponent } from './pages/photos/photos.component';
+import { AdvicesComponent } from './pages/advices/advices.component';
+import { OffersComponent } from './pages/offers/offers.component';
+import { SigninComponent } from './pages/signin/signin.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        MenuComponent,
+        FooterComponent,
+        HomepageComponent,
+        PhotosComponent,
+        AdvicesComponent,
+        OffersComponent,
+        SigninComponent
     ],
     imports: [
         NgbModule,

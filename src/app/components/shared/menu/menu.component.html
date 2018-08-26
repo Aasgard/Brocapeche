@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2e7d32;">
+    <div class="container">
+        <a class="navbar-brand" href="#" routerLink="/homepage" routerLinkActive="active">
+            <img src="../assets/fishing.png" width="30" height="30" class="d-inline-block align-top rounded mr-2">
+            Brocapêche
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav mr-auto mt-1 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/homepage" routerLinkActive="active">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/offers" routerLinkActive="active">Petites annonces</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/advices" routerLinkActive="active">Conseils</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/photos" routerLinkActive="active">Vos photos</a>
+                </li>
+            </ul>
+            <button *ngIf="!connectedUser" type="button" class="btn btn-primary mr-3 custom-signup-btn" (click)="getConnectedUser()">S'inscrire</button>
+            <button *ngIf="connectedUser" type="button" class="btn btn-primary mr-3 custom-signup-btn btn-blue">Mon compte</button>
+            <button *ngIf="!connectedUser" type="button" class="btn btn-primary custom-signin-btn" routerLink="/signin">Se connecter</button>
+            <button *ngIf="connectedUser" type="button" class="btn btn-danger custom-signin-btn btn-red" (click)="onSignOutButtonClicked()">Déconnexion</button>
+        </div>
+    </div>
+</nav>

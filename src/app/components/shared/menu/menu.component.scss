@@ -1,0 +1,33 @@
+nav {
+    -webkit-box-shadow: 0px 3px 36px 14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 36px 14px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 36px 14px rgba(0,0,0,0.75);
+}
+
+.custom-signup-btn, .custom-signin-btn {
+    background-color: #005005;
+    border-color: #60ad5e;
+}
+
+.custom-signup-btn, .custom-signin-btn {
+    &:active {
+        background-color: #60ad5e !important;
+        border-color: #60ad5e !important;
+    }
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(96, 173, 94, 0.5);
+    }
+    &:active:focus {
+        box-shadow: 0 0 0 0.2rem rgba(96, 173, 94, 0.5) !important;
+    }
+}
+
+.btn-blue {
+    background-color: #0277bd;
+    border-color: #58a5f0;
+}
+
+.btn-red {
+    background-color: #d32f2f;
+    border-color: #ff6659;
+}

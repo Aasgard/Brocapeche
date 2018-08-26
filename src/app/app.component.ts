@@ -12,9 +12,7 @@ import { HttpClient } from '@angular/common/http';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-
-    public connectedUser: User;
+export class AppComponent {
     public frenchDepartments: Array<any> = [];
 
     constructor(private translate: TranslateService, private afAuth: AngularFireAuth, private httpClient: HttpClient) {
@@ -22,10 +20,9 @@ export class AppComponent implements OnInit {
         this.getDepartments();
     }
 
-    public ngOnInit(): void {
-        this.afAuth.authState.subscribe((user: User) => {
-            this.connectedUser = user;
-            console.log(this.connectedUser);
+    private getDepartments(): void {
+        this.httpClient.get('assets/statics/french-departments.json').subscribe((result: any) => {
+            this.frenchDepartments = result;
         });
     }
 
@@ -34,30 +31,5 @@ export class AppComponent implements OnInit {
         this.translate.use('fr');
         // Define locale for Datetime object to French
         moment().locale('fr');
-    }
-
-    public onSignInButtonClicked(): void {
-        this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then((data: UserCredential) => {
-            this.connectedUser = data.user;
-        }).catch(error => {
-            alert(error);
-        });
-    }
-
-    public onSignOutButtonClicked(): void {
-        this.afAuth.auth.signOut().then(response => {
-            this.connectedUser = null;
-        });
-    }
-
-    public getConnectedUser(): void {
-        console.log(this.connectedUser);
-        // return this.connectedUser;
-    }
-
-    private getDepartments(): void {
-        this.httpClient.get('assets/statics/french-departments.json').subscribe((result: any) => {
-            this.frenchDepartments = result;
-        });
     }
 }

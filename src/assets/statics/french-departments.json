@@ -169,17 +169,17 @@
   },
   {
     "id":25,
-    "region_code":"84",
-    "code":"26",
-    "name":"Dr\u00f4me",
-    "slug":"drome"
+      "region_code":"84",
+      "code":"26",
+      "name":"Dr\u00f4me",
+      "slug":"drome"
   },
-  {
-    "id":26,
-    "region_code":"28",
-    "code":"27",
-    "name":"Eure",
-    "slug":"eure"
+    {
+        "id":26,
+        "region_code":"28",
+        "code":"27",
+        "name":"Eure",
+        "slug":"eure"
   },
   {
     "id":27,
