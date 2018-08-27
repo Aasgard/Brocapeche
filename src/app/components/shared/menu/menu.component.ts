@@ -24,14 +24,6 @@ export class MenuComponent implements OnInit {
         });
     }
 
-    public onSignInButtonClicked(): void {
-        this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then((data: UserCredential) => {
-            this.connectedUser = data.user;
-        }).catch(error => {
-            alert(error);
-        });
-    }
-
     public onSignOutButtonClicked(): void {
         this.afAuth.auth.signOut().then(response => {
             this.connectedUser = null;

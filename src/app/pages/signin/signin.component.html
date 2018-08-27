@@ -1,3 +1,22 @@
 <app-menu></app-menu>
 
-<h1>Page de LOGIN</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
+            <div class="signin-modal-container">
+                <div class="signin-modal-header">
+                    <p class="text-center signin-modal-header-title mb-0">Se connecter</p>
+                </div>
+                <div class="signin-modal-content">
+                    <input class="form-control mb-3" type="email" placeholder="Adresse email">
+                    <input class="form-control mb-3" type="password" placeholder="Mot de passe">
+                    <p class="mb-1">Pas encore inscrit ? <a href="#">S'inscrire</a></p>
+                    <a href="#" class="mb-3 d-block">Mot de passe oublié ?</a>
+                    <button type="button" class="btn btn-success btn-block btn-lg mb-3">Connexion</button>
+                    <button type="button" class="btn btn-success btn-block" (click)="onSignInButtonClicked()">Se connecter avec Google</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

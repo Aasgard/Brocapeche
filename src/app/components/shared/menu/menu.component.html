@@ -24,10 +24,10 @@
                     <a class="nav-link" href="#" routerLink="/photos" routerLinkActive="active">Vos photos</a>
                 </li>
             </ul>
-            <button *ngIf="!connectedUser" type="button" class="btn btn-primary mr-3 custom-signup-btn" (click)="getConnectedUser()">S'inscrire</button>
-            <button *ngIf="connectedUser" type="button" class="btn btn-primary mr-3 custom-signup-btn btn-blue">Mon compte</button>
-            <button *ngIf="!connectedUser" type="button" class="btn btn-primary custom-signin-btn" routerLink="/signin">Se connecter</button>
-            <button *ngIf="connectedUser" type="button" class="btn btn-danger custom-signin-btn btn-red" (click)="onSignOutButtonClicked()">Déconnexion</button>
+            <button *ngIf="!connectedUser" type="button" class="btn btn-success mr-3" (click)="getConnectedUser()">S'inscrire</button>
+            <button *ngIf="connectedUser" type="button" class="btn btn-warning mr-3">Mon compte</button>
+            <button *ngIf="!connectedUser" type="button" class="btn btn-success" routerLink="/signin">Se connecter</button>
+            <button *ngIf="connectedUser" type="button" class="btn btn-danger" (click)="onSignOutButtonClicked()">Déconnexion</button>
         </div>
     </div>
 </nav>
